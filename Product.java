@@ -16,7 +16,7 @@ public abstract class Product implements Comparable<Product>
      *
      * Products are compared based on their prices.
      *
-     * @param other the other Product to compare this Product with. // TODO fix typos
+     * @param other the other Product to compare this Product with.
      * @return A negative number if this product's price is less than the other product's price
      *         A positive number if this product's price is greater than the other product's price
      *         else 0 if this product's price is equal to the other product's price
