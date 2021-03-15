@@ -1,3 +1,8 @@
+/**
+ * An abstract class that represents a product in the bookstore.
+ *
+ * @author ckurdelak20@georgefox.edu
+ */
 public abstract class Product implements Comparable<Product>
 {
     // TODO implement class
@@ -6,8 +11,33 @@ public abstract class Product implements Comparable<Product>
     private String _desc;
     private double _price;
 
+    // TODO write ctor
+
+    /**
+     *
+     * @return
+     */
+    public String getID()
+    {
+        // TODO implement
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getDescription()
+    {
+        // TODO implement
+    }
+
+    /**
+     *
+     * @return
+     */
     public double getPrice()
     {
+        // TODO implement
         return 0;
     }
 
@@ -41,6 +71,16 @@ public abstract class Product implements Comparable<Product>
         }
 
         return result;
+    }
+
+    /**
+     *
+     * @return
+     */
+    @Override
+    public String toString()
+    {
+        // TODO implement
     }
 }
 
