@@ -13,10 +13,12 @@ public class InventoryLineItem implements Comparable<InventoryLineItem>
 {
     // TODO implement class
 
-    // TODO initialize internal state
     private static long _lineItemCount = 0; // DO NOT initialize in the ctor!!
     private long _lineItemNumber;
+    private Product _product;
+    private int _quantity;
 
+    // TODO write ctors
     /*
     // TODO put this in ctors:
     _lineItemCount ++;
@@ -24,6 +26,33 @@ public class InventoryLineItem implements Comparable<InventoryLineItem>
      */
 
     // TODO implement methods
+
+    /**
+     *
+     * @return
+     */
+    public long getLineItemNumber()
+    {
+        // TODO implement
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Product getProduct()
+    {
+        // TODO implement
+    }
+
+    /**
+     *
+     * @return
+     */
+    public int getQuantity()
+    {
+        // TODO implement
+    }
 
     /**
      * Calculates this item's subtotal.
@@ -83,6 +112,15 @@ public class InventoryLineItem implements Comparable<InventoryLineItem>
         return result;
     }
 
+    /**
+     *
+     * @return
+     */
+    @Override
+    public String toString()
+    {
+        // TODO implement
+    }
 
 }
 
