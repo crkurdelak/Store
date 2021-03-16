@@ -5,29 +5,42 @@
  */
 public class FlashDrive extends Product
 {
-    // TODO implement class
-
     private int _capacity;
 
-    // TODO write ctor
-
     /**
-     *
-     * @return
+     * Constructs a new FlashDrive object using the given ID, description, price, and capacity.
+     * @param id the FlashDrive's ID
+     * @param desc the FlashDrive's description
+     * @param price the FlashDrive's price
+     * @param capacity the FlashDrive's capacity
      */
-    public int getCapacity()
+    public FlashDrive(String id, String desc, double price, int capacity)
     {
-        // TODO implement
+        super(id, desc, price);
+
+        _capacity = capacity;
     }
 
     /**
+     * Returns this FlashDrive's capacity.
+     * @return this FlashDrive's capacity
+     */
+    public int getCapacity()
+    {
+        return _capacity;
+    }
+
+    /**
+     * Returns a String describing this FlashDrive.
      *
-     * @return
+     * Example: "ID: FD_005, Description: SanDisk Cruzer, Price: 8.99, Capacity: 16"
+     *
+     * @return a String describing this FlashDrive
      */
     @Override
     public String toString()
     {
-        // TODO implement
+        return String.format("%s, Capacity: %d", super.toString(), _capacity);
     }
 }
 

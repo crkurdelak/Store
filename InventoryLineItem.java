@@ -11,47 +11,63 @@
  */
 public class InventoryLineItem implements Comparable<InventoryLineItem>
 {
-    // TODO implement class
-
     private static long _lineItemCount = 0; // DO NOT initialize in the ctor!!
     private long _lineItemNumber;
     private Product _product;
     private int _quantity;
 
-    // TODO write ctors
-    /*
-    // TODO put this in ctors:
-    _lineItemCount ++;
-    _lineItemNumber = _lineItemCount
-     */
-
-    // TODO implement methods
 
     /**
-     *
-     * @return
+     * Constructs a new InventoryLineItem object using the given Product.
+     * @param product the Product that this item is // TODO find a better way to word this
+     */
+    public InventoryLineItem(Product product)
+    {
+        _lineItemCount ++;
+        _lineItemNumber = _lineItemCount;
+
+        _product = product;
+    }
+
+    /**
+     * Constructs a new InventoryLineItem object using the given product and quantity.
+     * @param product the product // TODO find better way to word these
+     * @param quantity the quantity of the product
+     */
+    public InventoryLineItem(Product product, int quantity)
+    {
+        _lineItemCount ++;
+        _lineItemNumber = _lineItemCount;
+
+        _product = product;
+        _quantity = quantity;
+    }
+
+    /**
+     * Returns this item's line item number.
+     * @return this item's line item number
      */
     public long getLineItemNumber()
     {
-        // TODO implement
+        return _lineItemNumber;
     }
 
     /**
-     *
-     * @return
+     * Returns the Product that this item is. // TODO find better wording
+     * @return the Product that this item is
      */
     public Product getProduct()
     {
-        // TODO implement
+        return _product;
     }
 
     /**
-     *
-     * @return
+     * Returns the quantity of this item.
+     * @return the quantity of this item
      */
     public int getQuantity()
     {
-        // TODO implement
+        return _quantity;
     }
 
     /**
@@ -63,7 +79,7 @@ public class InventoryLineItem implements Comparable<InventoryLineItem>
      */
     public double calcSubtotal()
     {
-        // TODO implement calcSubtotal
+        return this.getProduct().getPrice() * this.getQuantity();
     }
 
     /**
@@ -77,7 +93,21 @@ public class InventoryLineItem implements Comparable<InventoryLineItem>
      */
     public double calcDiscountRate()
     {
-        // TODO implement calcDiscountRate
+        double discountRate = 0;
+        if (this.getQuantity() >= 50)
+        {
+            discountRate = 0.25;
+        }
+        else if (this.getQuantity() >= 25)
+        {
+            discountRate = 0.20;
+        }
+        else if (this.getQuantity() >= 10)
+        {
+
+            discountRate = 0.10;
+        }
+        return discountRate;
     }
 
     /**
@@ -113,13 +143,18 @@ public class InventoryLineItem implements Comparable<InventoryLineItem>
     }
 
     /**
+     * Returns a String representing this InventoryLineItem.
      *
-     * @return
+     * Example: "Line Item Number: 1, Product: // TODO find out what to put here, Quantity: 10"
+     *
+     * @return a String representing this InventoryLineItem
      */
     @Override
     public String toString()
     {
-        // TODO implement
+        return String.format("Line Item Number: %d, Product: %s, Quantity: %d", _lineItemNumber, _product,
+                             _quantity
+                            );
     }
 
 }

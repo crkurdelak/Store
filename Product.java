@@ -5,40 +5,48 @@
  */
 public abstract class Product implements Comparable<Product>
 {
-    // TODO implement class
-
     private String _id;
     private String _desc;
     private double _price;
 
-    // TODO write ctor
+    /**
+     * Constructs a new Product object using the given ID, description, and price.
+     * @param id the Product's ID
+     * @param desc the Product's description
+     * @param price the Product's price
+     */
+    public Product(String id, String desc, double price)
+    {
+        _id = id;
+        _desc = desc;
+        _price = price;
+    }
 
     /**
-     *
-     * @return
+     * Returns this Product's ID.
+     * @return this Product's ID
      */
     public String getID()
     {
-        // TODO implement
+        return _id;
     }
 
     /**
-     *
-     * @return
+     * Returns this Product's description.
+     * @return this Product's description
      */
     public String getDescription()
     {
-        // TODO implement
+        return _desc;
     }
 
     /**
-     *
-     * @return
+     * Returns this Product's price.
+     * @return this Product's price
      */
     public double getPrice()
     {
-        // TODO implement
-        return 0;
+        return _price;
     }
 
     /**
@@ -74,13 +82,16 @@ public abstract class Product implements Comparable<Product>
     }
 
     /**
+     * Returns a String describing this Product.
      *
-     * @return
+     * Example: "ID: FD_005, Description: SanDisk Cruzer, Price: 8.99"
+     *
+     * @return a String describing this Product
      */
     @Override
     public String toString()
     {
-        // TODO implement
+        return String.format("ID: %s, Description: %s, Price: %f", _id, _desc, _price);
     }
 }
 
