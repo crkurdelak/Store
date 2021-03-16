@@ -5,29 +5,42 @@
  */
 public class WaterBottle extends Product
 {
-    // TODO implement class
-
     private int _capacity;
 
-    // TODO write ctors
-
     /**
-     *
-     * @return
+     * Constructs a new WaterBottle object using the given ID, description, price, and capacity.
+     * @param id the WaterBottle's ID
+     * @param desc the WaterBottle's description
+     * @param price the WaterBottle's price
+     * @param capacity the WaterBottle's capacity
      */
-    public int getCapacity()
+    public WaterBottle(String id, String desc, double price, int capacity)
     {
-        // TODO implement
+        super(id, desc, price);
+
+        _capacity = capacity;
     }
 
     /**
+     * Returns this WaterBottle's capacity.
+     * @return this WaterBottle's capacity
+     */
+    public int getCapacity()
+    {
+        return _capacity;
+    }
+
+    /**
+     * Returns a String describing this WaterBottle.
      *
-     * @return
+     * Example: "ID: WB_001, Description: HydroFlask w/Sport Lid, Navy Blue, Price: 49.99, Capacity: 40"
+     *
+     * @return a String describing this WaterBottle
      */
     @Override
     public String toString()
     {
-        // TODO implement
+        return String.format("%s,  Capacity: %d", super.toString(), _capacity);
     }
 }
 

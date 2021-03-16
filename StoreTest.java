@@ -7,6 +7,6 @@ public class StoreTest
         ArrayList<InventoryLineItem> items = new ArrayList<>();
         items.add(new InventoryLineItem(new FlashDrive("FD_005", "SanDisk Cruzer", 8.99, 16), 10));
 
-        System.out.toString(items);
+        System.out.toString(items.get(0));
     }
 }

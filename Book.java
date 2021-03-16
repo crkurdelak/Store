@@ -11,32 +11,44 @@ public class Book extends Product
 
     // TODO write ctor
 
+    public Book(String id, String desc, double price, String author, String publisher)
+    {
+        super(id, desc, price);
+
+        _publisher = publisher;
+        _author = author;
+    }
+
     /**
-     *
-     * @return
+     * Returns this Book's author.
+     * @return this Book's author
      */
     public String getAuthor()
     {
-        // TODO implement
+        return _author;
     }
 
     /**
-     *
-     * @return
+     * Returns this Book's publisher.
+     * @return this Book's publisher
      */
     public String getPublisher()
     {
-        //TODO implement
+        return _publisher;
     }
 
     /**
+     * Returns a String describing this Book.
      *
-     * @return
+     * Example: "ID: BK_202, Description: Big Java: Early Objects, Price: 99.99, Author: Cay S. Horstmann,
+     *          Publisher: Wiley"
+     *
+     * @return a String describing this Book
      */
     @Override
     public String toString()
     {
-        // TODO implement
+        return String.format("%s, Author: %s, Publisher: %s", super.toString(), _author, _publisher);
     }
 }
 
