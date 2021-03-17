@@ -79,13 +79,58 @@ public class StoreTest
             System.out.println(items.get(i).calcSubtotal());
         }
 
-        // TODO test compareTo
-        System.out.println("Testing compareTo:");
+        System.out.println("Testing compareTo for Product class:");
         ArrayList<Product> products = new ArrayList<Product>();
         // add products w/ variety of same & different prices
+        products.add(wb1);
+        products.add(fd1);
+        products.add(bk1);
+        products.add(new Book("BK_2", "Charlotte's Web", 5.99, "E. B. White", "Scholastic"));
+        for (int i = 1; i < products.size(); i++)
+        {
+            for (int j = 0; j < products.size() - 1; j++)
+            {
+                if (i != j)
+                {
+                    System.out.format
+                            (
+                                    "Comparing %f to %f: %d%n",
+                                    products.get(i).getPrice(), products.get(j).getPrice(),
+                                    products.get(i).compareTo(products.get(j))
+                            );
+                }
 
-        // TODO test ILI ctor that only takes one argument
+            }
+        }
 
-        // TODO test Product to make sure it's abstract like it's supposed to be
+        System.out.println("Testing compareTo for InventoryLineItem class:");
+        ArrayList<InventoryLineItem> lineItems = new ArrayList<InventoryLineItem>();
+        // add line items w/ variety of same & different subtotals
+        lineItems.add(new InventoryLineItem(fd1, 10));
+        lineItems.add(new InventoryLineItem(wb1, 10));
+        lineItems.add(new InventoryLineItem(bk1, 10));
+        lineItems.add(new InventoryLineItem(new Book("BK_3", "random kids' paperback", 5.99, "person", "random house"), 10));
+
+        for (int i = 1; i < lineItems.size(); i++)
+        {
+            for (int j = 0; j < lineItems.size() - 1; j++)
+            {
+                if (i != j)
+                {
+                    System.out.format
+                            (
+                                    "Comparing %f to %f: %d%n",
+                                    lineItems.get(i).calcSubtotal(), lineItems.get(j).calcSubtotal(),
+                                    lineItems.get(i).compareTo(lineItems.get(j))
+                            );
+                }
+
+            }
+        }
+
+        System.out.println("Testing InventoryLineItem ctor with one argument:");
+        InventoryLineItem ili1 = new InventoryLineItem(wb1);
+        System.out.println(ili1);
+
     }
 }

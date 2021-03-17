@@ -19,7 +19,7 @@ public class InventoryLineItem implements Comparable<InventoryLineItem>
 
     /**
      * Constructs a new InventoryLineItem object using the given Product.
-     * @param product the Product that this item is // TODO find a better way to word this
+     * @param product the Product that this InventoryLineItem refers to
      */
     public InventoryLineItem(Product product)
     {
@@ -27,13 +27,13 @@ public class InventoryLineItem implements Comparable<InventoryLineItem>
         _lineItemNumber = _lineItemCount;
 
         _product = product;
-        // TODO find out if supposed to initialize _quantity to 0
+        _quantity = 0;
     }
 
     /**
      * Constructs a new InventoryLineItem object using the given product and quantity.
-     * @param product the product // TODO find better way to word these
-     * @param quantity the quantity of the product
+     * @param product the Product that this InventoryLineItem refers to
+     * @param quantity the quantity of this InventoryLineItem
      */
     public InventoryLineItem(Product product, int quantity)
     {
@@ -54,8 +54,8 @@ public class InventoryLineItem implements Comparable<InventoryLineItem>
     }
 
     /**
-     * Returns the Product that this item is. // TODO find better wording
-     * @return the Product that this item is
+     * Returns the Product that this InventoryLineItem refers to
+     * @return the Product that this InventoryLineItem refers to
      */
     public Product getProduct()
     {
