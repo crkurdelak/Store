@@ -16,9 +16,10 @@ public class InventoryLineItem implements Comparable<InventoryLineItem>
     private Product _product;
     private int _quantity;
 
+    private static final double EPSILON = 1E-6;
 
     /**
-     * Constructs a new InventoryLineItem object using the given Product.
+     * Constructs a new InventoryLineItem object using the given Product and the default quantity of 0.
      * @param product the Product that this InventoryLineItem refers to
      */
     public InventoryLineItem(Product product)
@@ -126,7 +127,6 @@ public class InventoryLineItem implements Comparable<InventoryLineItem>
     public int compareTo(InventoryLineItem other)
     {
         int result = 0;
-        double EPSILON = 1E-6;
 
         if (Math.abs(this.calcSubtotal() - other.calcSubtotal()) < EPSILON)
         {

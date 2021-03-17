@@ -1,5 +1,5 @@
 /**
- * An abstract class that represents a product in the bookstore.
+ * An abstract class that represents some product in the bookstore.
  *
  * @author ckurdelak20@georgefox.edu
  */
@@ -8,6 +8,8 @@ public abstract class Product implements Comparable<Product>
     private String _id;
     private String _desc;
     private double _price;
+
+    private static final double EPSILON = 1E-6;
 
     /**
      * Constructs a new Product object using the given ID, description, and price.
@@ -63,7 +65,6 @@ public abstract class Product implements Comparable<Product>
     public int compareTo(Product other)
     {
         int result = 0;
-        double EPSILON = 1E-6;
 
         if (Math.abs(this.getPrice() - other.getPrice()) < EPSILON)
         {
