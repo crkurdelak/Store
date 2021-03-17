@@ -145,14 +145,14 @@ public class InventoryLineItem implements Comparable<InventoryLineItem>
     /**
      * Returns a String representing this InventoryLineItem.
      *
-     * Example: "Line Item Number: 1, Product: // TODO find out what to put here, Quantity: 10"
+     * Example: "Line Item Number: 1, Quantity: 10"
      *
      * @return a String representing this InventoryLineItem
      */
     @Override
     public String toString()
     {
-        return String.format("Line Item Number: %d, Product: %s, Quantity: %d", _lineItemNumber, _product,
+        return String.format("Line Item Number: %d, %s, Quantity: %d", _lineItemNumber, _product,
                              _quantity
                             );
     }
