@@ -5,11 +5,8 @@
  */
 public class Book extends Product
 {
-    // TODO implement class
     private String _author;
     private String _publisher;
-
-    // TODO write ctor
 
     public Book(String id, String desc, double price, String author, String publisher)
     {

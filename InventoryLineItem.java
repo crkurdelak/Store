@@ -27,6 +27,7 @@ public class InventoryLineItem implements Comparable<InventoryLineItem>
         _lineItemNumber = _lineItemCount;
 
         _product = product;
+        // TODO find out if supposed to initialize _quantity to 0
     }
 
     /**
@@ -73,13 +74,14 @@ public class InventoryLineItem implements Comparable<InventoryLineItem>
     /**
      * Calculates this item's subtotal.
      *
-     * multiply product's price by quantity
+     * multiply product's price by quantity and subtract discount
      *
      * @return this item's subtotal
      */
     public double calcSubtotal()
     {
-        return this.getProduct().getPrice() * this.getQuantity();
+        double basePrice = this.getProduct().getPrice() * this.getQuantity();
+        return basePrice - this.calcDiscountRate() * basePrice;
     }
 
     /**
