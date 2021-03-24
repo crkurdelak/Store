@@ -91,6 +91,26 @@ public class Inventory
     {
         // TODO implement restock
         // call findItemByID()
+        /*
+        try to find the product (by productID)
+        if found:
+            item.adjustQty(qty);
+        else:
+            item =  new ILI(product, qty);
+            _lineItems.add(item);
+         */
+        InventoryLineItem item = findItemByID(product.getID());
+        if (item != null)
+        {
+            item.adjustQuantity(quantity);
+        }
+        else
+        {
+            item =  new InventoryLineItem(product, quantity);
+            _lineItems.add(item);
+        }
+
+        return item.getQuantity();
     }
 
     /**

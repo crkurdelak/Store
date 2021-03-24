@@ -83,7 +83,7 @@ public class InventoryLineItem implements Comparable<InventoryLineItem>
      */
     public void adjustQuantity(int adjustment)
     {
-        // TODO implement adjustQuantity
+        _quantity += adjustment;
     }
 
     /**
