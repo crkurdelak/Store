@@ -15,7 +15,7 @@ public class Inventory
      */
     public Inventory()
     {
-        // TODO implement ctor
+        _lineItems = new ArrayList<InventoryLineItem>();
     }
 
     /**
@@ -28,6 +28,25 @@ public class Inventory
     public InventoryLineItem findItemByID(String productID)
     {
         // TODO implement findItemByID
+        InventoryLineItem foundItem = null;
+
+        /*
+        ILI foundItem = null;
+        for each item in _lineItems: // TODO use a while loop so you can stop early
+            if item's product's product ID equals productID:
+            if (item.getProduct().getID().equals(productID))
+                found it
+                foundItem = item
+
+        while loop version:
+        boolean found = false;
+        while _lineItems still has another item and haven't found item yet:
+        while count <= _lineItems.size and !found:
+            count ++;
+            .....
+
+        return foundItem;
+         */
     }
 
     /**
@@ -71,6 +90,7 @@ public class Inventory
     public int restock(Product product, int quantity)
     {
         // TODO implement restock
+        // call findItemByID()
     }
 
     /**

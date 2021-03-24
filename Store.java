@@ -13,7 +13,7 @@ public class Store
      */
     public Store()
     {
-        // TODO implement ctor
+        _inventory = new Inventory();
     }
 
     /**
@@ -30,6 +30,8 @@ public class Store
     public void loadStore(String filename)
     {
         // TODO implement loadStore
+        // get lines from file
+        // call processReturn() on each line
     }
 
     /**
@@ -47,6 +49,8 @@ public class Store
     public String processReturn(String item)
     {
         // TODO implement processReturn
+        // break string into pieces
+        // call restock() method in Inventory
     }
 
     /**
@@ -73,6 +77,7 @@ public class Store
     public String processOrder(String item)
     {
         // TODO implement processOrder
+        // call pick() in Inventory
     }
 
     /**
