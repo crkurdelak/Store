@@ -73,6 +73,20 @@ public class InventoryLineItem implements Comparable<InventoryLineItem>
     }
 
     /**
+     * Adjusts the quantity of this InventoryLineItem by a given amount.
+     *
+     * The adjustQuantity method adjusts the quantity of the line item. If
+     * the specified adjustment is positive, add to the quantity; if the adjustment is negative, subtract from
+     * the quantity.
+     *
+     * @param adjustment the amount, positive or negative, to adjust this line item by
+     */
+    public void adjustQuantity(int adjustment)
+    {
+        // TODO implement adjustQuantity
+    }
+
+    /**
      * Calculates this item's subtotal.
      *
      * multiply product's price by quantity and subtract discount
