@@ -74,6 +74,8 @@ public class Inventory
     public int getQuantityByID(String productID)
     {
         // TODO implement getQuantityByID
+        // run findItemByID()
+        // item.getQuantity()
     }
 
     /**
@@ -134,6 +136,32 @@ public class Inventory
     public int pick(String productID, int quantity)
     {
         // TODO implement pick
+        int returnValue = -1;
+        InventoryLineItem item = findItemByID(productID);
+        // use findItemByID
+        // if findItemByID:
+        if (item)
+        {
+            int itemQuantity = item.getQuantity();
+            if (itemQuantity >= quantity)
+            {
+                item.adjustQuantity(-quantity);
+                returnValue = 0;
+            }
+            //      if item.quantity >= quantity:
+            //          item.adjustQuantity(-quantity)
+            //          returnValue = 0;
+            else if (itemQuantity < quantity && itemQuantity > 0)
+            {
+                returnValue = itemQuantity;
+                item.adjustQuantity(-itemQuantity);
+            }
+            //      else if item.quantity < quantity && item.quantity > 0:
+            //          returnValue = item.quantity
+            //          item.adjustQuantity(item.quantity)
+        }
+
+        return returnValue;
     }
 
     /**

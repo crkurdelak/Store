@@ -30,8 +30,11 @@ public class Store
     public void loadStore(String filename)
     {
         // TODO implement loadStore
-        // get lines from file
-        // call processReturn() on each line
+        // try:
+        //      open filename
+        //      for each line:
+        //          process return(line)
+        // catch FileNotFoundException
     }
 
     /**
@@ -49,8 +52,35 @@ public class Store
     public String processReturn(String item)
     {
         // TODO implement processReturn
-        // break string into pieces
-        // call restock() method in Inventory
+        // split item string by commas -> parts
+        // ID = first part
+        // quantity = last part
+
+        // if findItemByID()
+        //      adjustQuantity
+        // else:
+        //      String.split(",") -> String[]
+        //      or
+        //      Scanner s = new Scanner(item);
+        //      s.useDelimiter(",");
+        //      s.next()
+
+        //      based on product ID, create new Product of that type
+        //      "BK_001"
+        //      .split("_")
+        //      .startsWith("BK")
+        //      .subString(0, 2)
+
+        //      if BK:
+        //          product = new Book()
+        //      else if WB:
+        //          product = new WB()
+        //      else if FD:
+        //          product = new FD()
+
+        //      restock(product, quantity)
+
+        return "RETURNED";
     }
 
     /**
@@ -90,6 +120,8 @@ public class Store
     public Product[] findProductsOfType(String productType)
     {
         // TODO implement findProductsofType
+        // use findItemsOfType()
+        // item.getProduct()
     }
 
 }
