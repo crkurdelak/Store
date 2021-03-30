@@ -4,6 +4,10 @@ public class StoreTest
 {
     public static void main(String[] args)
     {
+        Store store = new Store();
+
+
+        /*
         ArrayList<InventoryLineItem> items = new ArrayList<>();
         items.add(new InventoryLineItem(new FlashDrive("FD_005", "SanDisk Cruzer", 8.99, 16), 10));
         items.add(new InventoryLineItem(new Book("BK_202", "Big Java: Early Objects", 99.99, "Cay S. Horstmann", "Wiley"), 70));
@@ -131,6 +135,8 @@ public class StoreTest
         System.out.println("Testing InventoryLineItem ctor with one argument:");
         InventoryLineItem ili1 = new InventoryLineItem(wb1);
         System.out.println(ili1);
+
+         */
 
     }
 }

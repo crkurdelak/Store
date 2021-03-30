@@ -27,8 +27,17 @@ public class Inventory
      */
     public InventoryLineItem findItemByID(String productID)
     {
-        // TODO implement findItemByID
+        // TODO test findItemByID
         InventoryLineItem foundItem = null;
+        for (InventoryLineItem item : _lineItems)
+        {
+            if (item.getProduct().getID().equals(productID))
+            {
+                foundItem = item;
+            }
+        }
+
+        return foundItem;
 
         /*
         ILI foundItem = null;
@@ -91,7 +100,7 @@ public class Inventory
      */
     public int restock(Product product, int quantity)
     {
-        // TODO implement restock
+        // TODO test restock
         // call findItemByID()
         /*
         try to find the product (by productID)

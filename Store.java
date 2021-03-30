@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 /**
  * A class that represents a store.
  *
@@ -29,7 +33,22 @@ public class Store
      */
     public void loadStore(String filename)
     {
-        // TODO implement loadStore
+        // TODO test loadStore
+
+        try
+        {
+            File inputFile = new File(filename);
+            Scanner in = new Scanner(inputFile);
+            while (in.hasNextLine())
+            {
+                processReturn(in.nextLine());
+            }
+        }
+        catch (FileNotFoundException e)
+        {
+            System.out.println("File not found."); // TODO find out how to handle this properly
+        }
+
         // try:
         //      open filename
         //      for each line:
@@ -52,6 +71,11 @@ public class Store
     public String processReturn(String item)
     {
         // TODO implement processReturn
+
+        String[] parts = item.split(",");
+        String ID = parts[0];
+        String quantity = parts[parts.length - 1];
+
         // split item string by commas -> parts
         // ID = first part
         // quantity = last part

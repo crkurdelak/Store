@@ -1,0 +1,3 @@
+FD_005,SanDisk Cruzer,8.99,16,10
+BK_202,Big Java: Early Objects,99.99,Cay S. Horstmann,Wiley,70
+WB_001,HydroFlask w/Sport Lid - Navy Blue,49.99,40,5
