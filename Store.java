@@ -57,6 +57,15 @@ public class Store
     }
 
     /**
+     * Returns this Store's inventory.
+     * @return this Store's inventory
+     */
+    public Inventory getInventory()
+    {
+        return _inventory;
+    }
+
+    /**
      * Returns the given item to this Store, changing the item's quantity in this Store's inventory.
      *
      * The item string shall be in the same format as above when loading the store
@@ -75,6 +84,8 @@ public class Store
         String[] parts = item.split(",");
         String ID = parts[0];
         String quantity = parts[parts.length - 1];
+
+        //if (_inventory.) // TODO find out how to access _inventory
 
         // split item string by commas -> parts
         // ID = first part
@@ -132,6 +143,7 @@ public class Store
     {
         // TODO implement processOrder
         // call pick() in Inventory
+        return null;
     }
 
     /**
@@ -146,6 +158,7 @@ public class Store
         // TODO implement findProductsofType
         // use findItemsOfType()
         // item.getProduct()
+        return null;
     }
 
 }

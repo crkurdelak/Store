@@ -19,6 +19,15 @@ public class Inventory
     }
 
     /**
+     * Returns this Inventory's line items.
+     * @return this Inventory's line items
+     */
+    public ArrayList<InventoryLineItem> getLineItems()
+    {
+        return _lineItems;
+    }
+
+    /**
      * Returns the InventoryLineItem object from the inventory that contains the product with the specified product ID.
      * If the product does not exist, returns null.
      * @param productID the ID of the product being searched for
@@ -73,6 +82,7 @@ public class Inventory
     public InventoryLineItem[] findItemsOfType(String productType)
     {
         // TODO implement findItemsOfType
+        return null;
     }
 
     /**
@@ -85,6 +95,7 @@ public class Inventory
         // TODO implement getQuantityByID
         // run findItemByID()
         // item.getQuantity()
+        return 0;
     }
 
     /**
@@ -144,12 +155,12 @@ public class Inventory
      */
     public int pick(String productID, int quantity)
     {
-        // TODO implement pick
+        // TODO test pick
         int returnValue = -1;
         InventoryLineItem item = findItemByID(productID);
         // use findItemByID
         // if findItemByID:
-        if (item)
+        if (_lineItems.contains(item))
         {
             int itemQuantity = item.getQuantity();
             if (itemQuantity >= quantity)
@@ -184,6 +195,7 @@ public class Inventory
     public double calcInventoryValue()
     {
         // TODO implement calcInventoryValue
+        return 0;
     }
 
 }
