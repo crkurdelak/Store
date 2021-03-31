@@ -5,10 +5,13 @@ public class StoreTest
     public static void main(String[] args)
     {
         Store store = new Store();
+        store.loadStore("inventory.txt");
+
+        /*
         FlashDrive fd1 = new FlashDrive("FD_005", "SanDisk Cruzer", 8.99, 16);
         store.getInventory().restock(fd1, 10);
         System.out.println(store.getInventory().getLineItems());
-
+        */
 
         /*
         ArrayList<InventoryLineItem> items = new ArrayList<>();

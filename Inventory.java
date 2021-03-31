@@ -171,7 +171,7 @@ public class Inventory
             //      if item.quantity >= quantity:
             //          item.adjustQuantity(-quantity)
             //          returnValue = 0;
-            else if (itemQuantity < quantity && itemQuantity > 0)
+            else if (itemQuantity > 0)
             {
                 returnValue = itemQuantity;
                 item.adjustQuantity(-itemQuantity);

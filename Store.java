@@ -46,7 +46,7 @@ public class Store
         }
         catch (FileNotFoundException e)
         {
-            System.out.println("File not found."); // TODO find out how to handle this properly
+            System.out.println("File not found.");
         }
 
         // try:
@@ -79,13 +79,37 @@ public class Store
      */
     public String processReturn(String item)
     {
-        // TODO implement processReturn
+        // TODO test processReturn
 
         String[] parts = item.split(",");
         String ID = parts[0];
-        String quantity = parts[parts.length - 1];
+        int quantity = Integer.parseInt(parts[parts.length - 1]);
+        InventoryLineItem lineItem = _inventory.findItemByID(ID);
 
-        //if (_inventory.) // TODO find out how to access _inventory
+        if (_inventory.getLineItems().contains(lineItem))
+        {
+            lineItem.adjustQuantity(quantity);
+        }
+        else
+        {
+            String itemType = ID.split("_")[0];
+
+            Product product = null;
+            if (itemType.equals("BK"))
+            {
+                product = new Book(parts[0], parts[1], Double.parseDouble(parts[2]), parts[3], parts[4]);
+            }
+            else if (itemType.equals("WB"))
+            {
+                product = new WaterBottle(parts[0], parts[1], Double.parseDouble(parts[2]), Integer.parseInt(parts[3]));
+            }
+            else if (itemType.equals("FD"))
+            {
+                product = new FlashDrive(parts[0], parts[1], Double.parseDouble(parts[2]), Integer.parseInt(parts[3]));
+            }
+
+            _inventory.restock(product, quantity);
+        }
 
         // split item string by commas -> parts
         // ID = first part
