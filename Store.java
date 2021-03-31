@@ -33,8 +33,6 @@ public class Store
      */
     public void loadStore(String filename)
     {
-        // TODO test loadStore
-
         try
         {
             File inputFile = new File(filename);
@@ -48,12 +46,6 @@ public class Store
         {
             System.out.println("File not found.");
         }
-
-        // try:
-        //      open filename
-        //      for each line:
-        //          process return(line)
-        // catch FileNotFoundException
     }
 
     /**
@@ -79,8 +71,6 @@ public class Store
      */
     public String processReturn(String item)
     {
-        // TODO test processReturn
-
         String[] parts = item.split(",");
         String ID = parts[0];
         int quantity = Integer.parseInt(parts[parts.length - 1]);
@@ -108,36 +98,8 @@ public class Store
                 product = new FlashDrive(parts[0], parts[1], Double.parseDouble(parts[2]), Integer.parseInt(parts[3]));
             }
 
-            _inventory.restock(product, quantity);
+            _inventory.restock(product, quantity); // TODO see if it's ok for the program to die if product is null
         }
-
-        // split item string by commas -> parts
-        // ID = first part
-        // quantity = last part
-
-        // if findItemByID()
-        //      adjustQuantity
-        // else:
-        //      String.split(",") -> String[]
-        //      or
-        //      Scanner s = new Scanner(item);
-        //      s.useDelimiter(",");
-        //      s.next()
-
-        //      based on product ID, create new Product of that type
-        //      "BK_001"
-        //      .split("_")
-        //      .startsWith("BK")
-        //      .subString(0, 2)
-
-        //      if BK:
-        //          product = new Book()
-        //      else if WB:
-        //          product = new WB()
-        //      else if FD:
-        //          product = new FD()
-
-        //      restock(product, quantity)
 
         return "RETURNED";
     }

@@ -4,7 +4,10 @@ public class StoreTest
 {
     public static void main(String[] args)
     {
+        System.out.println("Creating new Store object:");
         Store store = new Store();
+
+        System.out.println("Testing loadStore:");
         store.loadStore("inventory.txt");
         ArrayList<InventoryLineItem> lineItems = store.getInventory().getLineItems();
         for (int i = 0; i < lineItems.size(); i++)
@@ -12,8 +15,23 @@ public class StoreTest
             System.out.println(lineItems.get(i));
         }
 
+        System.out.println("Testing restock:");
         FlashDrive fd1 = new FlashDrive("FD_005", "SanDisk Cruzer", 8.99, 16);
         store.getInventory().restock(fd1, 10);
+        System.out.println(store.getInventory().getLineItems());
+
+        System.out.println("Testing findItemByID:");
+        System.out.println(store.getInventory().findItemByID("BK_202"));
+
+        System.out.println("Testing pick:");
+        System.out.println(store.getInventory().pick("BK_202", 20));
+        System.out.println(store.getInventory().pick("WB_001", 20));
+        System.out.println(store.getInventory().pick("Bob", 20));
+        System.out.println(store.getInventory().pick("WB_001", 20));
+        System.out.println(store.getInventory().getLineItems());
+
+        System.out.println("Testing restock:");
+        store.getInventory().restock(store.getInventory().findItemByID("WB_001").getProduct(), 10);
         System.out.println(store.getInventory().getLineItems());
 
         /*
