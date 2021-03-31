@@ -6,12 +6,15 @@ public class StoreTest
     {
         Store store = new Store();
         store.loadStore("inventory.txt");
+        ArrayList<InventoryLineItem> lineItems = store.getInventory().getLineItems();
+        for (int i = 0; i < lineItems.size(); i++)
+        {
+            System.out.println(lineItems.get(i));
+        }
 
-        /*
         FlashDrive fd1 = new FlashDrive("FD_005", "SanDisk Cruzer", 8.99, 16);
         store.getInventory().restock(fd1, 10);
         System.out.println(store.getInventory().getLineItems());
-        */
 
         /*
         ArrayList<InventoryLineItem> items = new ArrayList<>();
