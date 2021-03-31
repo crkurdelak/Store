@@ -74,10 +74,10 @@ public class Inventory
      */
     public int getQuantityByID(String productID)
     {
-        // TODO implement getQuantityByID
-        // run findItemByID()
-        // item.getQuantity()
-        return 0;
+        // TODO test getQuantityByID
+        InventoryLineItem item = this.findItemByID(productID);
+        int quantity = item.getQuantity();
+        return quantity;
     }
 
     /**
@@ -158,7 +158,10 @@ public class Inventory
     public double calcInventoryValue()
     {
         // TODO implement calcInventoryValue
-        return 0;
+        double inventoryValue = 0;
+        // for each item in inventory
+        // inventoryValue += item.calcSubtotal()
+        return inventoryValue;
     }
 
 }

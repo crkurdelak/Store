@@ -127,9 +127,26 @@ public class Store
      */
     public String processOrder(String item)
     {
-        // TODO implement processOrder
-        // call pick() in Inventory
-        return null;
+        // TODO test processOrder
+        String returnValue = null;
+        String[] parts = item.split(",");
+        String ID = parts[0];
+        int quantity = Integer.parseInt(parts[1]);
+        int result = _inventory.pick(ID, quantity);
+        if (result == 0)
+        {
+            returnValue = String.format("PROCESSED %d", quantity);
+        }
+        else if (result == -1)
+        {
+            returnValue = "OUT OF STOCK";
+        }
+        else
+        {
+            returnValue = String.format("INSUFFICIENT %d OF %d", result, quantity);
+        }
+
+        return returnValue;
     }
 
     /**
