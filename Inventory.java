@@ -30,9 +30,11 @@ public class Inventory
     /**
      * Returns the InventoryLineItem object from the inventory that contains the product with the specified product ID.
      * If the product does not exist, returns null.
+     *
      * @param productID the ID of the product being searched for
+     *
      * @return the InventoryLineItem object from the inventory that contains the product with the specified product ID.
-     * If the product does not exist, returns null // TODO find out how to format this comment
+     * If the product does not exist, returns null
      */
     public InventoryLineItem findItemByID(String productID)
     {
@@ -58,13 +60,40 @@ public class Inventory
      * drives, WB for water bottles).
      *
      * @param productType The type of product being searched for
-     * @return an array of InventoryLineItem that have a product of the specified
-     * product type. If no matching line items are found, returns an empty array. // TODO find out how to format this comment
+     *
+     * @return an array of InventoryLineItem that has a product of the specified
+     * product type. If no matching line items are found, returns an empty array.
      */
     public InventoryLineItem[] findItemsOfType(String productType)
     {
-        // TODO implement findItemsOfType
-        return null;
+        // TODO test findItemsOfType
+        InventoryLineItem[] foundItems = new InventoryLineItem[10];
+        int numFound = 0;
+        for (int i = 0; i < _lineItems.size(); i++)
+        {
+            InventoryLineItem item = _lineItems.get(i);
+            String ID = item.getProduct().getID();
+            String itemType = ID.split("_")[0];
+            if (itemType.equals(productType))
+            {
+                numFound ++;
+                if (numFound > foundItems.length)
+                {
+                    InventoryLineItem[] newValues = new InventoryLineItem[foundItems.length + 10];
+                    for (int j = 0; j < foundItems.length; j++)
+                    {
+                        newValues[j] = foundItems[j];
+                    }
+                    foundItems = newValues;
+                }
+                else
+                {
+                    foundItems[i] = item;
+                }
+            }
+        }
+
+        return foundItems;
     }
 
     /**
@@ -119,11 +148,12 @@ public class Inventory
      *
      * @param productID the ID of the product to be removed from the inventory
      * @param quantity the quantity of the product to be removed from the inventory
+     *
      * @return an integer value according to the following:
-     *      * 0, if the specified quantity can be picked successfully;
-     *      * -1, if the specified product is not in stock or not found in the inventory;
-     *      * the quantity we have on hand, if the specified quantity requested is more than we currently
-     *      * have on hand. // TODO find out how to format this comment
+     * 0, if the specified quantity can be picked successfully;
+     * -1, if the specified product is not in stock or not found in the inventory;
+     * the quantity we have on hand, if the specified quantity requested is more than we currently
+     * have on hand.
      */
     public int pick(String productID, int quantity)
     {
@@ -157,10 +187,12 @@ public class Inventory
      */
     public double calcInventoryValue()
     {
-        // TODO implement calcInventoryValue
+        // TODO test calcInventoryValue
         double inventoryValue = 0;
-        // for each item in inventory
-        // inventoryValue += item.calcSubtotal()
+        for (int i = 0; i < _lineItems.size(); i++)
+        {
+            inventoryValue += _lineItems.get(i).calcSubtotal();
+        }
         return inventoryValue;
     }
 

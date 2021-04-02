@@ -98,7 +98,10 @@ public class Store
                 product = new FlashDrive(parts[0], parts[1], Double.parseDouble(parts[2]), Integer.parseInt(parts[3]));
             }
 
-            _inventory.restock(product, quantity); // TODO see if it's ok for the program to die if product is null
+            if (product != null)
+            {
+                _inventory.restock(product, quantity);
+            }
         }
 
         return "RETURNED";
@@ -118,12 +121,13 @@ public class Store
      * the store’s inventory.
      *
      * @param item the item being ordered from this Store
+     *
      * @return
      * "PROCESSED %d", with the quantity processed, for a successfully-fulfilled order;
      * "INSUFFICIENT %d OF %d", with the quantity on hand and the quantity requested, respectively,
      * if there is insufficient quantity to fulfill the order;
      * "OUT OF STOCK", if the quantity on hand is zero or the product does not currently exist in
-     * the store’s inventory.  // TODO find out how to format this comment
+     * the store’s inventory.
      */
     public String processOrder(String item)
     {
@@ -152,16 +156,25 @@ public class Store
     /**
      * Returns an array containing instances of the specified product type that
      * are found in the inventory. If no matching products are found, returns an empty array.
+     *
      * @param productType the type of product being searched for in the inventory
+     *
      * @return an array containing instances of the specified product type that are found in the inventory
-     * If no matching products are found, returns an empty array. // TODO find out how to format this comment
+     * If no matching products are found, returns an empty array.
      */
     public Product[] findProductsOfType(String productType)
     {
-        // TODO implement findProductsofType
+        // TODO test findProductsofType
         // use findItemsOfType()
+        InventoryLineItem[] foundItems = _inventory.findItemsOfType(productType);
+        Product[] foundProducts = new Product[foundItems.length];
         // item.getProduct()
-        return null;
+        for (int i = 0; i < foundItems.length; i++)
+        {
+            foundProducts[i] = foundItems[i].getProduct();
+        }
+
+        return foundProducts;
     }
 
 }
