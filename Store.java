@@ -9,7 +9,6 @@ import java.util.Scanner;
  */
 public class Store
 {
-    // TODO implement Store
     private Inventory _inventory;
 
     /**
@@ -131,7 +130,6 @@ public class Store
      */
     public String processOrder(String item)
     {
-        // TODO test processOrder
         String returnValue = null;
         String[] parts = item.split(",");
         String ID = parts[0];
@@ -169,7 +167,7 @@ public class Store
         InventoryLineItem[] foundItems = _inventory.findItemsOfType(productType);
         Product[] foundProducts = new Product[foundItems.length];
         // item.getProduct()
-        for (int i = 0; i < foundItems.length; i++)
+        for (int i = 0; i < foundItems.length; i++) // TODO fix issue
         {
             foundProducts[i] = foundItems[i].getProduct();
         }

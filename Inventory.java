@@ -7,7 +7,6 @@ import java.util.ArrayList;
  */
 public class Inventory
 {
-    // TODO implement Inventory
     private ArrayList<InventoryLineItem> _lineItems;
 
     /**
@@ -66,7 +65,6 @@ public class Inventory
      */
     public InventoryLineItem[] findItemsOfType(String productType)
     {
-        // TODO test findItemsOfType
         InventoryLineItem[] foundItems = new InventoryLineItem[10];
         int numFound = 0;
         for (int i = 0; i < _lineItems.size(); i++)
@@ -86,10 +84,7 @@ public class Inventory
                     }
                     foundItems = newValues;
                 }
-                else
-                {
-                    foundItems[i] = item;
-                }
+                foundItems[numFound - 1] = item;
             }
         }
 
@@ -103,7 +98,6 @@ public class Inventory
      */
     public int getQuantityByID(String productID)
     {
-        // TODO test getQuantityByID
         InventoryLineItem item = this.findItemByID(productID);
         int quantity = item.getQuantity();
         return quantity;
@@ -187,7 +181,6 @@ public class Inventory
      */
     public double calcInventoryValue()
     {
-        // TODO test calcInventoryValue
         double inventoryValue = 0;
         for (int i = 0; i < _lineItems.size(); i++)
         {

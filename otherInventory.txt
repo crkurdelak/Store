@@ -1,0 +1,17 @@
+FD_001,SanDisk Cruzer,8.99,16,10
+FD_002,SanDisk Cruzer,8.99,16,10
+FD_003,SanDisk Cruzer,8.99,16,10
+FD_004,SanDisk Cruzer,8.99,16,10
+FD_005,SanDisk Cruzer,8.99,16,10
+FD_006,SanDisk Cruzer,8.99,16,10
+FD_007,SanDisk Cruzer,8.99,16,10
+FD_008,SanDisk Cruzer,8.99,16,10
+FD_009,SanDisk Cruzer,8.99,16,10
+FD_010,SanDisk Cruzer,8.99,16,10
+FD_011,SanDisk Cruzer,8.99,16,10
+FD_012,SanDisk Cruzer,8.99,16,10
+BK_201,Big Java: Early Objects,99.99,Cay S. Horstmann,Wiley,70
+BK_202,Big Java: Early Objects,99.99,Cay S. Horstmann,Wiley,70
+WB_001,HydroFlask w/Sport Lid - Navy Blue,49.99,40,5
+WB_002,HydroFlask w/Sport Lid - Navy Blue,49.99,40,5
+WB_003,HydroFlask w/Sport Lid - Navy Blue,49.99,40,5

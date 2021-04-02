@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class StoreTest
 {
@@ -9,6 +10,7 @@ public class StoreTest
 
         System.out.println("Testing loadStore:");
         store.loadStore("inventory.txt");
+        //store.loadStore("otherInventory.txt");
         ArrayList<InventoryLineItem> lineItems = store.getInventory().getLineItems();
         for (int i = 0; i < lineItems.size(); i++)
         {
@@ -33,6 +35,35 @@ public class StoreTest
         System.out.println("Testing restock:");
         store.getInventory().restock(store.getInventory().findItemByID("WB_001").getProduct(), 10);
         System.out.println(store.getInventory().getLineItems());
+
+        System.out.println("Testing processOrder:");
+        System.out.println(store.processOrder("BK_202,10"));
+        System.out.println(store.processOrder("WB_001,40"));
+        System.out.println(store.processOrder("WB_001,40"));
+        System.out.println(store.processOrder("WB_003,1"));
+        System.out.println(store.getInventory().getLineItems());
+
+        System.out.println("Testing getQuantityByID:");
+        System.out.println(store.getInventory().getQuantityByID("BK_202"));
+        System.out.println(store.getInventory().getQuantityByID("WB_001"));
+        //System.out.println(store.getInventory().getQuantityByID("WB_003"));
+
+        System.out.println("Testing calcInventoryValue:");
+        for (int i = 0; i < lineItems.size(); i++)
+        {
+            System.out.println(lineItems.get(i).calcSubtotal());
+        }
+        System.out.println(store.getInventory().calcInventoryValue());
+
+        System.out.println("Testing findItemsOfType:");
+        System.out.println(Arrays.toString(store.getInventory().findItemsOfType("BK")));
+        System.out.println(Arrays.toString(store.getInventory().findItemsOfType("WB")));
+        System.out.println(Arrays.toString(store.getInventory().findItemsOfType("FD")));
+
+        System.out.println("Testing findProductsOfType:");
+        System.out.println(Arrays.toString(store.findProductsOfType("BK")));
+        System.out.println(Arrays.toString(store.findProductsOfType("WB")));
+        System.out.println(Arrays.toString(store.findProductsOfType("FD")));
 
         /*
         ArrayList<InventoryLineItem> items = new ArrayList<>();
