@@ -9,8 +9,8 @@ public class StoreTest
         Store store = new Store();
 
         System.out.println("Testing loadStore:");
-        store.loadStore("inventory.txt");
-        //store.loadStore("otherInventory.txt");
+        //store.loadStore("inventory.txt");
+        store.loadStore("otherInventory.txt");
         ArrayList<InventoryLineItem> lineItems = store.getInventory().getLineItems();
         for (int i = 0; i < lineItems.size(); i++)
         {
@@ -24,6 +24,7 @@ public class StoreTest
 
         System.out.println("Testing findItemByID:");
         System.out.println(store.getInventory().findItemByID("BK_202"));
+        System.out.println(store.getInventory().findItemByID("BK_200"));
 
         System.out.println("Testing pick:");
         System.out.println(store.getInventory().pick("BK_202", 20));

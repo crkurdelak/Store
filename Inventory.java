@@ -37,16 +37,16 @@ public class Inventory
      */
     public InventoryLineItem findItemByID(String productID)
     {
-        // TODO use a while loop so you can stop early
         InventoryLineItem foundItem = null;
-        for (InventoryLineItem item : _lineItems)
+        int i = 0;
+        while (foundItem == null && i < _lineItems.size())
         {
-            if (item.getProduct().getID().equals(productID))
+            if (_lineItems.get(i).getProduct().getID().equals(productID))
             {
-                foundItem = item;
+                foundItem = _lineItems.get(i);
             }
+            i++;
         }
-
         return foundItem;
     }
 
@@ -65,8 +65,7 @@ public class Inventory
      */
     public InventoryLineItem[] findItemsOfType(String productType)
     {
-        InventoryLineItem[] foundItems = new InventoryLineItem[10];
-        int numFound = 0;
+        ArrayList<InventoryLineItem> foundItemsArrayList = new ArrayList<InventoryLineItem>();
         for (int i = 0; i < _lineItems.size(); i++)
         {
             InventoryLineItem item = _lineItems.get(i);
@@ -74,20 +73,14 @@ public class Inventory
             String itemType = ID.split("_")[0];
             if (itemType.equals(productType))
             {
-                numFound ++;
-                if (numFound > foundItems.length)
-                {
-                    InventoryLineItem[] newValues = new InventoryLineItem[foundItems.length + 10];
-                    for (int j = 0; j < foundItems.length; j++)
-                    {
-                        newValues[j] = foundItems[j];
-                    }
-                    foundItems = newValues;
-                }
-                foundItems[numFound - 1] = item;
+                foundItemsArrayList.add(item);
             }
         }
-
+        InventoryLineItem[] foundItems = new InventoryLineItem[foundItemsArrayList.size()];
+        for (int i = 0; i < foundItemsArrayList.size(); i++)
+        {
+            foundItems[i] = foundItemsArrayList.get(i);
+        }
         return foundItems;
     }
 
@@ -126,7 +119,6 @@ public class Inventory
             item =  new InventoryLineItem(product, quantity);
             _lineItems.add(item);
         }
-
         return item.getQuantity();
     }
 
@@ -167,7 +159,6 @@ public class Inventory
                 item.adjustQuantity(-itemQuantity);
             }
         }
-
         return returnValue;
     }
 

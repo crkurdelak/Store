@@ -102,7 +102,6 @@ public class Store
                 _inventory.restock(product, quantity);
             }
         }
-
         return "RETURNED";
     }
 
@@ -147,7 +146,6 @@ public class Store
         {
             returnValue = String.format("INSUFFICIENT %d OF %d", result, quantity);
         }
-
         return returnValue;
     }
 
@@ -162,16 +160,14 @@ public class Store
      */
     public Product[] findProductsOfType(String productType)
     {
-        // TODO test findProductsofType
         // use findItemsOfType()
         InventoryLineItem[] foundItems = _inventory.findItemsOfType(productType);
         Product[] foundProducts = new Product[foundItems.length];
         // item.getProduct()
-        for (int i = 0; i < foundItems.length; i++) // TODO fix issue
+        for (int i = 0; i < foundItems.length; i++)
         {
             foundProducts[i] = foundItems[i].getProduct();
         }
-
         return foundProducts;
     }
 
