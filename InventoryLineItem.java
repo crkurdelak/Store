@@ -1,11 +1,12 @@
 /**
  * A class that represents a line item in the bookstore's inventory.
  *
- * Class InventoryLineItem represents a line item in the bookstore’s inventory. A line item has a unique
- * line item number, an associated product, a quantity on hand of that product, and a corresponding
- * discount rate based on the quantity currently on hand (i. e., if we have a lot of an item in stock,
- * give a discount to encourage sales). The line item’s subtotal is calculated based on its product’s
- * price times the quantity, minus the discount.
+ * Class InventoryLineItem represents a line item in the bookstore’s inventory. A line
+ * item has a unique line item number, an associated product, a quantity on hand of
+ * that product, and a corresponding discount rate based on the quantity currently on
+ * hand (i. e., if we have a lot of an item in stock, give a discount to encourage
+ * sales). The line item’s subtotal is calculated based on its product’s price times
+ * the quantity, minus the discount.
  *
  * @author ckurdelak20@georgefox.edu
  */
@@ -19,15 +20,13 @@ public class InventoryLineItem implements Comparable<InventoryLineItem>
     private static final double EPSILON = 1E-6;
 
     /**
-     * Constructs a new InventoryLineItem object using the given Product and the default quantity of 0.
+     * Constructs a new InventoryLineItem object using the given Product and the default
+     * quantity of 0.
      * @param product the Product that this InventoryLineItem refers to
      */
     public InventoryLineItem(Product product)
     {
-        _lineItemCount ++;
-        _lineItemNumber = _lineItemCount;
-
-        _product = product;
+        this(product, 0);
         _quantity = 0;
     }
 
@@ -76,8 +75,8 @@ public class InventoryLineItem implements Comparable<InventoryLineItem>
      * Adjusts the quantity of this InventoryLineItem by a given amount.
      *
      * The adjustQuantity method adjusts the quantity of the line item. If
-     * the specified adjustment is positive, add to the quantity; if the adjustment is negative, subtract from
-     * the quantity.
+     * the specified adjustment is positive, add to the quantity; if the adjustment is
+     * negative, subtract from the quantity.
      *
      * @param adjustment the amount, positive or negative, to adjust this line item by
      */
@@ -102,9 +101,10 @@ public class InventoryLineItem implements Comparable<InventoryLineItem>
     /**
      * Calculates this item's discount rate.
      *
-     * Quantity-on-hand-based discount rates are determined as follows: if the quantity on hand is greater than
-     * or equal to 10, discount that product by 10%; greater than or equal to 25, discount by 20%; greater than
-     * or equal to 50, discount by 25%. Discount rates shall be represented as 0.10 for 10%.
+     * Quantity-on-hand-based discount rates are determined as follows: if the quantity on
+     * hand is greater than or equal to 10, discount that product by 10%; greater than or
+     * equal to 25, discount by 20%; greater than or equal to 50, discount by 25%. Discount
+     * rates shall be represented as 0.10 for 10%.
      *
      * @return this item's discount rate
      */
@@ -167,10 +167,9 @@ public class InventoryLineItem implements Comparable<InventoryLineItem>
      */
     @Override
     public String toString()
-    {
-        return String.format("Line Item Number: %d, %s, Quantity: %d", _lineItemNumber, _product,
-                             _quantity
-                            );
+    { return String.format("Line Item Number: %d, %s, Quantity: %d", _lineItemNumber, _product,
+            _quantity
+        );
     }
 
 }

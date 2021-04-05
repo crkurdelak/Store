@@ -33,7 +33,8 @@ public class WaterBottle extends Product
     /**
      * Returns a String describing this WaterBottle.
      *
-     * Example: "ID: WB_001, Description: HydroFlask w/Sport Lid, Navy Blue, Price: 49.99, Capacity: 40"
+     * Example: "ID: WB_001, Description: HydroFlask w/Sport Lid, Navy Blue, Price: 49.99,
+     *          Capacity: 40"
      *
      * @return a String describing this WaterBottle
      */

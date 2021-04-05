@@ -5,11 +5,10 @@
  */
 public abstract class Product implements Comparable<Product>
 {
+    private static final double EPSILON = 1E-6;
     private String _id;
     private String _desc;
     private double _price;
-
-    private static final double EPSILON = 1E-6;
 
     /**
      * Constructs a new Product object using the given ID, description, and price.

@@ -37,8 +37,8 @@ public class Book extends Product
     /**
      * Returns a String describing this Book.
      *
-     * Example: "ID: BK_202, Description: Big Java: Early Objects, Price: 99.99, Author: Cay S. Horstmann,
-     *          Publisher: Wiley"
+     * Example: "ID: BK_202, Description: Big Java: Early Objects, Price: 99.99,
+     *          Author: Cay S. Horstmann, Publisher: Wiley"
      *
      * @return a String describing this Book
      */
