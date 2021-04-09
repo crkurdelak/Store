@@ -92,7 +92,11 @@ public class Inventory
     public int getQuantityByID(String productID)
     {
         InventoryLineItem item = this.findItemByID(productID);
-        int quantity = item.getQuantity();
+        int quantity = 0;
+        if (item != null)
+        {
+            item.getQuantity();
+        }
         return quantity;
     }
 
