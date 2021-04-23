@@ -171,4 +171,19 @@ public class Store
         return foundProducts;
     }
 
+    // TODO implement saveStore
+    public void saveStore(String filename)
+    {
+        // use a printwriter
+        // use new functionality of findItemsOfType
+        // handle exceptions
+    }
+
+    public String[] processTransactions(Transaction[] transactions)
+    {
+        // TODO implement processTransactions
+        // use processReturn and processOrder
+        return null;
+    }
+
 }

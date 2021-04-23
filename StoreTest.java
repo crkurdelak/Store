@@ -5,6 +5,21 @@ public class StoreTest
 {
     public static void main(String[] args)
     {
+        Transaction[] transactions = Transaction.loadTransaction("transactions.txt");
+        //System.out.println(transactions.txt);
+
+        for (int i = 0; i < transactions.length ; i++)
+        {
+            System.out.println(transactions[i]);
+        }
+
+        for (int i = 0; i < transactions.length ; i++)
+        {
+            System.out.println(transactions[i].getTransaction());
+            System.out.println(transactions[i].isReturn());
+        }
+
+        /*
         System.out.println("Creating new Store object:");
         Store store = new Store();
 
@@ -65,6 +80,7 @@ public class StoreTest
         System.out.println(Arrays.toString(store.findProductsOfType("BK")));
         System.out.println(Arrays.toString(store.findProductsOfType("WB")));
         System.out.println(Arrays.toString(store.findProductsOfType("FD")));
+         */
 
         /*
         ArrayList<InventoryLineItem> items = new ArrayList<>();
