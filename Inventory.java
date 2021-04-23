@@ -62,16 +62,14 @@ public class Inventory
      *
      * @return an array of InventoryLineItem that has a product of the specified
      * product type. If no matching line items are found, returns an empty array.
+     * If the string is "", return all items.
      */
-    public InventoryLineItem[] findItemsOfType(String productType) // TODO make it return all items if string is ""
+    public InventoryLineItem[] findItemsOfType(String productType)
     {
         ArrayList<InventoryLineItem> foundItemsArrayList = new ArrayList<InventoryLineItem>();
         if (productType.equals(""))     // return all items if string is ""
         {
-            for (int i = 0; i < _lineItems.size(); i++)
-            {
-                foundItemsArrayList.add(_lineItems.get(i));
-            }
+            foundItemsArrayList.addAll(_lineItems);
         }
         else
         {

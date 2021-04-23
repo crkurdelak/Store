@@ -19,12 +19,20 @@ public class StoreTest
             System.out.println(transactions[i].isReturn());
         }
 
-        /*
+
         System.out.println("Creating new Store object:");
         Store store = new Store();
 
         System.out.println("Testing loadStore:");
-        //store.loadStore("inventory.txt");
+        store.loadStore("inventory.txt");
+        System.out.println("Testing new functionality of findItemsByType:");
+        System.out.println(Arrays.toString(store.getInventory().findItemsOfType("")));
+
+        System.out.println("Testing processTransactions:");
+        System.out.println(Arrays.toString(store.processTransactions(transactions)));
+        System.out.println(store.getInventory().getLineItems());
+
+        /*
         store.loadStore("otherInventory.txt");
         ArrayList<InventoryLineItem> lineItems = store.getInventory().getLineItems();
         for (int i = 0; i < lineItems.size(); i++)

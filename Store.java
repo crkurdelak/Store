@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -172,6 +173,11 @@ public class Store
     }
 
     // TODO implement saveStore
+
+    /**
+     *
+     * @param filename
+     */
     public void saveStore(String filename)
     {
         // use a printwriter
@@ -179,11 +185,32 @@ public class Store
         // handle exceptions
     }
 
+    /**
+     *
+     * @param transactions
+     * @return
+     */
     public String[] processTransactions(Transaction[] transactions)
     {
-        // TODO implement processTransactions
-        // use processReturn and processOrder
-        return null;
+        ArrayList<String> messagesArrayList = new ArrayList<String>();
+        for (int i = 0; i < transactions.length; i++)
+        {
+            if (transactions[i].isReturn())
+            {
+                messagesArrayList.add(this.processReturn(transactions[i].getTransaction()));
+            }
+            else
+            {
+                messagesArrayList.add(this.processOrder(transactions[i].getTransaction()));
+            }
+        }
+        String[] messages = new String[messagesArrayList.size()];
+        for (int i = 0; i < messages.length; i++)
+        {
+            messages[i] = messagesArrayList.get(i);
+        }
+
+        return messages;
     }
 
 }
