@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -179,7 +180,6 @@ public class Store
      */
     public void saveStore(String filename)
     {
-        // TODO test saveStore
         try
         {
             File outputFile = new File(filename);
@@ -191,9 +191,9 @@ public class Store
             }
             pw.close();
         }
-        catch (FileNotFoundException e) // TODO find out if this is the right one
+        catch (IOException e)
         {
-            System.err.println("File not found."); // TODO abort the operation
+            System.err.println("IO Exception");
         }
     }
 
