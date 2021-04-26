@@ -91,7 +91,7 @@ public abstract class Product implements Comparable<Product>
     @Override
     public String toString()
     {
-        return String.format("ID: %s, Description: %s, Price: $%.2f", _id, _desc, _price);
+        return String.format("%s,%s,%.2f", _id, _desc, _price);
     }
 }
 

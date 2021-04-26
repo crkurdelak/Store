@@ -45,7 +45,7 @@ public class Book extends Product
     @Override
     public String toString()
     {
-        return String.format("%s, Author: %s, Publisher: %s", super.toString(), _author, _publisher);
+        return String.format("%s,%s,%s", super.toString(), _author, _publisher);
     }
 }
 

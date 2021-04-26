@@ -167,7 +167,7 @@ public class InventoryLineItem implements Comparable<InventoryLineItem>
      */
     @Override
     public String toString()
-    { return String.format("Line Item Number: %d, %s, Quantity: %d", _lineItemNumber, _product,
+    { return String.format("%s,%d", _product,
             _quantity
         );
     }

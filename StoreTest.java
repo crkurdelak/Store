@@ -32,6 +32,10 @@ public class StoreTest
         System.out.println(Arrays.toString(store.processTransactions(transactions)));
         System.out.println(store.getInventory().getLineItems());
 
+        System.out.println("Testing saveStore:");
+        // store.saveStore("new_inventory.txt");
+        store.saveStore("foo");
+
         /*
         store.loadStore("otherInventory.txt");
         ArrayList<InventoryLineItem> lineItems = store.getInventory().getLineItems();

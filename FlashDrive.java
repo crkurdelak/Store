@@ -40,7 +40,7 @@ public class FlashDrive extends Product
     @Override
     public String toString()
     {
-        return String.format("%s, Capacity: %d", super.toString(), _capacity);
+        return String.format("%s,%d", super.toString(), _capacity);
     }
 }
 
