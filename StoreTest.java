@@ -33,8 +33,8 @@ public class StoreTest
         System.out.println(store.getInventory().getLineItems());
 
         System.out.println("Testing saveStore:");
-        // store.saveStore("new_inventory.txt");
-        store.saveStore("foo");
+        store.saveStore("new_inventory.txt");
+
 
         /*
         store.loadStore("otherInventory.txt");

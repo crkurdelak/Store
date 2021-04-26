@@ -180,27 +180,21 @@ public class Store
     public void saveStore(String filename)
     {
         // TODO test saveStore
-        // use a printwriter
         try
         {
             File outputFile = new File(filename);
             PrintWriter pw = new PrintWriter(outputFile);
-            // create array of all inventory items using findItemsOfType
             InventoryLineItem[] lineItems = _inventory.findItemsOfType("");
             for (int i = 0; i < lineItems.length; i++)
             {
                 pw.println(lineItems[i].toString());
             }
             pw.close();
-            // go thru array
-            // for each item, write its string to a line of the file
         }
         catch (FileNotFoundException e) // TODO find out if this is the right one
         {
             System.err.println("File not found."); // TODO abort the operation
         }
-        // use new functionality of findItemsOfType
-        // handle exceptions
     }
 
     /**
